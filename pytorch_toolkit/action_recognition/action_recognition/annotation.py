@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 
 from .utils import load_json, load_value_file
-
+import os
 
 def get_video_names_and_annotations(data, subset):
     """Selects clips of a given subset from the parsed json annotation"""
@@ -34,7 +34,7 @@ def get_video_props(video_path, video_format, annotation):
     if video_format == 'frames':
         if not video_path.exists():
             return 0, 0
-        n_frames = int(load_value_file(video_path / 'n_frames'))
+        n_frames = int(len(os.listdir(video_path)))#int(load_value_file(video_path / 'n_frames'))
         fps = 30
     else:
         cap = cv2.VideoCapture(video_path.as_posix())

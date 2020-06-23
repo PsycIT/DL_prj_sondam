@@ -77,7 +77,9 @@ class TorchActionRecognition:
 
         n = self.args.sample_duration
         if sequence.size(1) < n:
+            print(sequence.size(), sequence.size(1))
             num_repeats = (n - 1) // sequence.size(1) + 1
+            print(sequence.repeat(1, num_repeats, 1)[:, :n, :])
             sequence = sequence.repeat(1, num_repeats, 1)[:, :n, :]
 
         return sequence
@@ -134,6 +136,7 @@ def run_demo(model, video_cap, labels):
             break
 
         logits = model.infer_frame(frame)
+        print(logits[0])
         probs = F.softmax(logits[0], dim=0)
         frame = render_frame(frame, probs, labels)
 

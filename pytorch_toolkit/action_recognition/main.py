@@ -267,7 +267,7 @@ def configure_paths(args):
 
 def configure_dataset(args):
     dataset = args.dataset
-    if dataset in ('hmdb51', 'ucf101'):
+    if dataset in ('hmdb51', 'ucf101', 'sondam'):
         dataset += '_' + str(getattr(args, 'split', 1))
 
     config_path = Path(__file__).parent / 'datasets' / "{}.json".format(dataset)
@@ -318,6 +318,7 @@ def main():
     log_configuration(args)
 
     model, parameters = create_model(args, args.model, pretrain_path=args.pretrain_path)
+    print('model : ',model)
     optimizer, scheduler = setup_solver(args, parameters)
 
     if args.resume_path:
