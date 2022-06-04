@@ -4,7 +4,7 @@ matplotlib==3.1.2
 networkx==2.4
 numpy==1.17.4
 onnx==1.6.0
-opencv-python==4.1.2.30
+opencv-python==4.2.0.32
 Polygon3==3.0.8
 pycocotools==2.0.0
 PyYAML==5.4
