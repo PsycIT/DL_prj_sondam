@@ -3,7 +3,7 @@ tensorflow==2.7.2
 tensorflow-gpu==2.7.2
 tensorflow-estimator==1.10.12
 numpy==1.15.4
-opencv-python==4.0.0.21
+opencv-python==4.2.0.32
 PyYAML==5.4
 simplejson==3.16.0
 matplotlib==2.2.2
