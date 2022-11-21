@@ -1,5 +1,5 @@
 numpy==1.14.6
-tensorflow==2.7.2
+tensorflow==2.9.3
 tensorboard==1.13.1
 tensorflow-gpu==2.7.2
 opencv-python==3.4.2.17
